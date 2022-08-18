@@ -13,6 +13,7 @@ module.exports = function (api) {
             "@utils": "./utils",
             "@api": "./api",
             "@services": "./services",
+            "@containers": "./containers",
           },
         },
       ],

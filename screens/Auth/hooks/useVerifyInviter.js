@@ -11,7 +11,7 @@ const useVerifyInviter = () => {
   const [inviter, setInviter] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [debouncedInviter, setDebouncedInviter] = useState(inviter);
-  const { data, error, isLoading } = useUserExistsQuery(debouncedInviter);
+  const { data, error } = useUserExistsQuery(debouncedInviter);
 
   useEffect(() => {
     dispatch(reset());

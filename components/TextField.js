@@ -3,7 +3,7 @@ import { TextInput, Platform } from "react-native";
 import { View } from "react-native";
 import tw from "twrnc";
 
-function TextField({ value, onChange, placeholder, type, styles }) {
+function TextField({ value, onChange, placeholder, type, styles, disabled }) {
   const getFieldType = () => {
     switch (type) {
       case "email":
@@ -16,6 +16,10 @@ function TextField({ value, onChange, placeholder, type, styles }) {
           autoComplete: "password",
           keyboardType: "password-visible",
         };
+      case "number":
+        return {
+          keyboardType: "number-pad",
+        };
       default:
         return {
           keyboardType: "default",
@@ -25,8 +29,14 @@ function TextField({ value, onChange, placeholder, type, styles }) {
   };
 
   return (
-    <View style={[tw`flex p-3 bg-gray-200 text-xl m-2`, styles.root]}>
+    <View
+      style={[
+        tw.style("flex p-3 bg-gray-200 text-xl m-2", disabled && "opacity-50"),
+        styles.root,
+      ]}
+    >
       <TextInput
+        editable={!disabled}
         style={[
           tw.style("text-xl text-black", Platform.OS == "ios" && "leading-0"),
           styles.input,

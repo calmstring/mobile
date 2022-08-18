@@ -1,4 +1,5 @@
-import useVerifyEmail from "./useVerifyEmail";
+import useCreateEmailVerification from "./useCreateEmailVerification";
 import useVerifyInviter from "./useVerifyInviter";
+import useEmailVerify from "./useEmailVerify";
 
-export { useVerifyEmail, useVerifyInviter };
+export { useCreateEmailVerification, useVerifyInviter, useEmailVerify };

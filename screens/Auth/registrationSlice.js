@@ -7,6 +7,7 @@ const initialState = {
   username: null,
   currentStep: "inviter",
   completed: false,
+  isSSO: false,
 };
 
 export const registrationSlice = createSlice({
@@ -20,6 +21,7 @@ export const registrationSlice = createSlice({
       state.username = null;
       state.fullName = null;
       state.currentStep = "inviter";
+      state.isSSO = false;
       state.completed = false;
     },
     setInviter: (state, action) => {
@@ -40,6 +42,10 @@ export const registrationSlice = createSlice({
     setUsername: (state, action) => {
       state.username = action.payload;
       state.completed = true;
+    },
+    setSSO: (state, action) => {
+      state.isSSO = action.payload;
+      state.currentStep = "username";
     },
   },
 });

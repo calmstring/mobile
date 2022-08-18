@@ -11,7 +11,25 @@ export const authApi = createApi({
         method: "get",
       }),
     }),
+    sendEmailVerification: builder.mutation({
+      query: ({ email }) => ({
+        url: "email/verification/create/",
+        method: "post",
+        data: { email },
+      }),
+    }),
+    verifyEmail: builder.mutation({
+      query: ({ email, code }) => ({
+        url: "email/verification/verify/",
+        method: "post",
+        data: { email, code },
+      }),
+    }),
   }),
 });
 
-export const { useUserExistsQuery } = authApi;
+export const {
+  useUserExistsQuery,
+  useSendEmailVerificationMutation,
+  useVerifyEmailMutation,
+} = authApi;

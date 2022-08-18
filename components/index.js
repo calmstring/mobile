@@ -1,13 +1,13 @@
 import TextField from "./TextField";
 import FieldLabel from "./FieldLabel";
-import ErrorMessage from "./ErrorMessage";
+import FieldMessage from "./FieldMessage";
 import { Button, ButtonPrimary, ButtonSecondary } from "./Buttons";
 import Logo from "./Logo";
 
 export {
   TextField,
   FieldLabel,
-  ErrorMessage,
+  FieldMessage,
   Button,
   ButtonPrimary,
   ButtonSecondary,

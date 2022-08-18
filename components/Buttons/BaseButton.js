@@ -3,7 +3,7 @@ import { Text, TouchableOpacity } from "react-native";
 import React from "react";
 import tw from "@lib/tailwind";
 
-function Button({ children, onClick, styles, disabled }) {
+function Button({ children, onClick, styles, disabled, renderText = true }) {
   return (
     <TouchableOpacity
       disabled={disabled}
@@ -14,17 +14,21 @@ function Button({ children, onClick, styles, disabled }) {
         styles.root,
       ]}
     >
-      <Text
-        style={[
-          tw`
+      {renderText ? (
+        <Text
+          style={[
+            tw`
             text-xl
             font-semibold
             text-center`,
-          styles.text,
-        ]}
-      >
-        {children}
-      </Text>
+            styles.text,
+          ]}
+        >
+          {children}
+        </Text>
+      ) : (
+        <>{children}</>
+      )}
     </TouchableOpacity>
   );
 }
@@ -36,12 +40,14 @@ Button.propsTypes = {
     root: PropTypes.object,
     text: PropTypes.object,
   }),
+  renderText: PropTypes.bool,
 };
 
 Button.defaultProps = {
   onClick: () => {},
   children: null,
   styles: { root: {}, text: {} },
+  renderText: true,
 };
 
 export default Button;
