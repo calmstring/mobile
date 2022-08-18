@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import React from "react";
-import tw from "twrnc";
+import tw from "@lib/tailwind";
 
-function Button({ children, onClick, styles }) {
+function Button({ children, onClick, styles, disabled }) {
   return (
     <TouchableOpacity
+      disabled={disabled}
+      activeOpacity={0.8}
       onPress={onClick}
-      style={[tw`p-2 m-2 bg-black rounded-lg`, styles.root]}
+      style={[
+        tw.style(`p-2 m-2 rounded-lg flex`, disabled && "opacity-50"),
+        styles.root,
+      ]}
     >
       <Text
         style={[
           tw`
-            text-white 
             text-xl
             font-semibold
             text-center`,

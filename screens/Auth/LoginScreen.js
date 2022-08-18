@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { View, Image, StyleSheet, SafeAreaView } from "react-native";
 import React from "react";
-import tw from "twrnc";
-import { TextField, Button } from "../../components";
+import { tw } from "@lib";
+import { TextField, Logo, ButtonPrimary } from "@components";
 
 export default function LoginScreen() {
   return (
     <SafeAreaView>
       <View>
         <View style={tw`flex  items-center pt-3`}>
-          <Image
-            style={[styles.image]}
-            source={require("../../assets/Calmstring-with-logo.png")}
-          />
+          <Logo />
         </View>
         <LoginForm />
       </View>
@@ -38,7 +35,7 @@ function LoginForm() {
         onChange={setPassword}
         type="password"
       />
-      <Button onClick={() => {}}>Zaloguj się</Button>
+      <ButtonPrimary onClick={() => {}}>Zaloguj się</ButtonPrimary>
     </View>
   );
 }
