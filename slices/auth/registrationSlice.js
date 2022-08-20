@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const registrationSlice = createSlice({
-  name: "auth-registration",
+  name: "registration",
   initialState,
   reducers: {
     reset: (state) => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useVerifyEmailMutation } from "@services/calmstring/authApi";
+import { useVerifyEmailMutation } from "@services/authApi";
 import { useSelector, useDispatch } from "react-redux";
-import { setEmailSignature } from "../registrationSlice";
+import { setEmailSignature } from "@slices/auth/registrationSlice";
 
 export default function useEmailVerify() {
   const { email } = useSelector((state) => state.registration);

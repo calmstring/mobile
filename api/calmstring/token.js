@@ -1,5 +1,6 @@
 import { secureStore } from "@lib";
 import axios from "axios";
+import { CALMSTRING_REFRESH_TOKEN_URL } from "@constants/api";
 
 const CALMSTRING_ACCESS_TOKEN_KEY = "CALMSTRING_ACCESS_TOKEN_KEY";
 const CALMSTRING_REFRESH_TOKEN_KEY = "CALMSTRING_REFRESH_TOKEN_KEY";
@@ -22,7 +23,7 @@ const token = {
     },
   },
   refreshToken: async () => {
-    const refreshToken = token.get.refresh();
+    const refreshToken = await token.get.refresh();
     if (!refreshToken) {
       throw new Error("No refresh token found");
     }
@@ -31,8 +32,7 @@ const token = {
         refresh: refreshToken,
       });
       const data = await response.data;
-
-      token.set.access(response.access);
+      token.set.access(data.access);
 
       return data;
     } catch (error) {

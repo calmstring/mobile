@@ -1,3 +1,4 @@
 import validateEmail from "./validateEmail";
+import removeUndefinedProperties from "./removeUndefinedProperties";
 
-export { validateEmail };
+export { validateEmail, removeUndefinedProperties };

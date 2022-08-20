@@ -7,7 +7,7 @@ import {
   ButtonPrimary,
 } from "@components/";
 import FormBase from "./FormBase";
-import { useEmailVerify } from "../hooks";
+import { useEmailVerify } from "@hooks/auth";
 import { useSelector } from "react-redux";
 import { tw } from "@lib/";
 
@@ -26,14 +26,16 @@ function VerifyEmail({ navigation }) {
   const onSubmit = async () => {
     const submited = await submit();
     if (submited) {
-      navigation.navigate("AccountCreate");
+      navigation.navigate("CreatePassword");
     }
   };
 
   return (
     <>
-      <View style={tw`mt-5 items-center`}>
-        <Text style={tw`text-base text-left`}>
+      <View style={tw`items-center`}>
+        <Text
+          style={tw`text-base text-left text-text-dark dark:text-text-light`}
+        >
           Wysłaliśmy ci email z kodem weryfikacyjnym na{" "}
           <Text style={tw`font-semibold`}>{email}</Text>
           {"\n"}Wpisz go poniżej, by potwierdzić swój email.

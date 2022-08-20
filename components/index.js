@@ -3,6 +3,7 @@ import FieldLabel from "./FieldLabel";
 import FieldMessage from "./FieldMessage";
 import { Button, ButtonPrimary, ButtonSecondary } from "./Buttons";
 import Logo from "./Logo";
+import Suspense from "./Suspense";
 
 export {
   TextField,
@@ -12,4 +13,5 @@ export {
   ButtonPrimary,
   ButtonSecondary,
   Logo,
+  Suspense,
 };

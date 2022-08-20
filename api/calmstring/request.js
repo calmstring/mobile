@@ -6,14 +6,20 @@ export const baseRequest = axios.create({
   baseURL: CALMSTRING_API_URL,
 });
 
-const request = { ...baseRequest };
+const request = axios.create({
+  baseURL: CALMSTRING_API_URL,
+});
 
 request.interceptors.request.use(
   (config) => {
-    config.headers = {
-      ...config.headers,
-      ...{ Authorization: `Bearer ${token.get.access()}` },
+    const getToken = async () => {
+      const accessToken = await token.get.access();
+      config.headers = {
+        ...config.headers,
+        ...{ Authorization: `Bearer ${accessToken}` },
+      };
     };
+    getToken();
 
     return config;
   },
@@ -32,7 +38,6 @@ request.interceptors.response.use(
         const originalRequest = error.config;
         try {
           originalRequest._retry = true;
-
           resolve(
             token.refreshToken().then((response) => {
               originalRequest.headers = {

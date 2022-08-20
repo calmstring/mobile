@@ -3,5 +3,14 @@ import React from "react";
 import { tw } from "@lib/";
 
 export default function FieldLabel({ text, style }) {
-  return <Text style={[tw`text-base font-bold ml-2`, style]}>{text}</Text>;
+  return (
+    <Text
+      style={[
+        tw`text-base font-bold ml-2 text-text-dark dark:text-text-light`,
+        style,
+      ]}
+    >
+      {text}
+    </Text>
+  );
 }

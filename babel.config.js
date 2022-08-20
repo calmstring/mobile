@@ -14,9 +14,12 @@ module.exports = function (api) {
             "@api": "./api",
             "@services": "./services",
             "@containers": "./containers",
+            "@slices": "./slices",
+            "@hooks": "./hooks",
           },
         },
       ],
+      ["react-native-reanimated/plugin"],
     ],
   };
 };

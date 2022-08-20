@@ -25,6 +25,27 @@ export const authApi = createApi({
         data: { email, code },
       }),
     }),
+    registerUser: builder.mutation({
+      query: ({ email, password, password_repeated, signature, inviter }) => ({
+        url: "register/",
+        method: "post",
+        data: { email, password, password_repeated, signature, inviter },
+      }),
+    }),
+    verifyToken: builder.mutation({
+      query: ({ token }) => ({
+        url: "token/verify/",
+        method: "post",
+        data: { token },
+      }),
+    }),
+    signIn: builder.mutation({
+      query: ({ email, password }) => ({
+        url: "login/",
+        method: "post",
+        data: { email, password },
+      }),
+    }),
   }),
 });
 
@@ -32,4 +53,7 @@ export const {
   useUserExistsQuery,
   useSendEmailVerificationMutation,
   useVerifyEmailMutation,
+  useRegisterUserMutation,
+  useVerifyTokenMutation,
+  useSignInMutation,
 } = authApi;

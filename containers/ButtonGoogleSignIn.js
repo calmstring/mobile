@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { Button } from "@components/Buttons";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { tw } from "@lib";
 
 import { expoClientId, iosClientId, androidClientId } from "@constants/google";

@@ -4,7 +4,10 @@ import { tw } from "@lib";
 const ButtonSecondary = (props) => {
   return (
     <BaseButton
-      styles={{ root: tw`bg-yellow-500`, text: tw`text-stone-100` }}
+      styles={{
+        root: tw`bg-secondary-light dark:bg-secondary-dark`,
+        text: tw`text-secondary-text-light dark:text-secondary-text-dark`,
+      }}
       {...props}
     />
   );

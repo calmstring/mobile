@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AuthMethodScreen from "./AuthMethodScreen";
 import InviterScreen from "./InviterScreen";
 import VerifyEmailScreen from "./VerifyEmailScreen";
-import AccountCreateScreen from "./AccountCreateScreen";
+import CreatePasswordScreen from "./CreatePasswordScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,9 +26,9 @@ export default function RegisterScreen() {
         component={VerifyEmailScreen}
       />
       <Stack.Screen
-        name="AccountCreate"
+        name="CreatePassword"
         options={{ headerShown: false }}
-        component={AccountCreateScreen}
+        component={CreatePasswordScreen}
       />
     </Stack.Navigator>
   );

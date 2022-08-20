@@ -1,9 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import WelcomeScreen from "./WelcomeScreen";
 import LoginScreen from "./LoginScreen";
-import RegisterScreen from "./RegisterScreen";
+import SignUpScreen from "./SignUp";
+import CompleteSignUp from "./CompleteSignUp";
 
-export { LoginScreen };
+export { LoginScreen, CompleteSignUp };
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ export default function Auth() {
       <Stack.Screen
         name="Register"
         options={{ title: "Rejestracja" }}
-        component={RegisterScreen}
+        component={SignUpScreen}
       />
     </Stack.Navigator>
   );

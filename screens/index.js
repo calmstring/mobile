@@ -1,3 +1,3 @@
 import HomeScreen from "./HomeScreen";
-import Auth from "./Auth";
+import Auth from "./auth";
 export { HomeScreen, Auth };

@@ -7,7 +7,7 @@ import {
   FieldMessage,
 } from "@components/";
 import { tw } from "@lib";
-import { useCreateEmailVerification } from "../hooks";
+import { useCreateEmailVerification } from "@hooks/auth";
 import { ButtonGoogleSignIn } from "@containers/";
 import FormBase from "./FormBase";
 
@@ -16,7 +16,7 @@ import FormBase from "./FormBase";
  */
 
 function CreateEmailVerification({ navigation }) {
-  const { email, setEmail, submit, isValid, verficResult } =
+  const { email, setEmail, submit, isValid, requestResult } =
     useCreateEmailVerification();
 
   const onSubmit = async () => {
@@ -34,19 +34,19 @@ function CreateEmailVerification({ navigation }) {
         onChange={setEmail}
         type="email"
         placeholder="email@example.com"
-        disabled={verficResult.isLoading}
+        disabled={requestResult.isLoading}
       />
-      {verficResult.isError && (
+      {requestResult.isError && (
         <FieldMessage
           severity="error"
           text={
-            verficResult?.error?.data?.email || "Błąd przy wysyłaniu emaila"
+            requestResult?.error?.data?.email || "Błąd przy wysyłaniu emaila"
           }
         />
       )}
       <ButtonPrimary
         onClick={onSubmit}
-        disabled={!isValid || verficResult.isLoading}
+        disabled={!isValid || requestResult.isLoading}
       >
         Wyślij kod weryfikacyjny
       </ButtonPrimary>
@@ -60,7 +60,11 @@ export default function ChooseRegistrationMethod({ navigation }) {
       <View style={tw`mt-5`}>
         <CreateEmailVerification navigation={navigation} />
       </View>
-      <Text style={tw`p-5 text-xl font-semibold text-center`}>Lub</Text>
+      <Text
+        style={tw`p-5 text-xl font-semibold text-center text-text-dark dark:text-text-light`}
+      >
+        Lub
+      </Text>
       <ButtonGoogleSignIn />
     </FormBase>
   );

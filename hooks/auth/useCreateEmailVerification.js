@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { validateEmail } from "@utils/";
-import { useSendEmailVerificationMutation } from "@services/calmstring/authApi";
+import { useSendEmailVerificationMutation } from "@services/authApi";
 import { useDispatch } from "react-redux";
-import { setEmail as registrationSetEmail } from "../registrationSlice";
+import { setEmail as registrationSetEmail } from "@slices/auth/registrationSlice";
 
 const useCreateEmailVerification = () => {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ const useCreateEmailVerification = () => {
     submit,
     isValid: isValid || !email.length,
     submit,
-    verficResult: result,
+    requestResult: result,
   };
 };
 
