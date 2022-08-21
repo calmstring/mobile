@@ -1,4 +1,3 @@
-import { View } from "react-native";
 import React from "react";
 import {
   TextField,
@@ -6,7 +5,6 @@ import {
   FieldLabel,
   ButtonPrimary,
 } from "@components/";
-import { tw } from "@lib";
 import { useVerifyInviter } from "@hooks/auth";
 import { REGISTRATION } from "@constants/";
 

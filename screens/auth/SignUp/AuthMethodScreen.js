@@ -1,10 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import {
   TextField,
   FieldLabel,
   ButtonPrimary,
   FieldMessage,
+  Typography,
 } from "@components/";
 import { tw } from "@lib";
 import { useCreateEmailVerification } from "@hooks/auth";
@@ -60,11 +61,9 @@ export default function ChooseRegistrationMethod({ navigation }) {
       <View style={tw`mt-5`}>
         <CreateEmailVerification navigation={navigation} />
       </View>
-      <Text
-        style={tw`p-5 text-xl font-semibold text-center text-text-dark dark:text-text-light`}
-      >
+      <Typography style={tw`p-5 text-xl font-semibold text-center`}>
         Lub
-      </Text>
+      </Typography>
       <ButtonGoogleSignIn />
     </FormBase>
   );

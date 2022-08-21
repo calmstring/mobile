@@ -34,6 +34,7 @@ function LoginForm() {
     isValid,
     requestResult: { isLoading, isError, error },
   } = useLogin();
+
   return (
     <View style={tw`px-5 mt-3 `}>
       <FieldLabel text="Adres email" />
@@ -51,7 +52,12 @@ function LoginForm() {
         onChange={setPassword}
         type="password"
       />
-      {isError && <FieldMessage text={error?.data?.detail} severity="error" />}
+      {isError && (
+        <FieldMessage
+          text={error?.data?.detail || error?.data}
+          severity="error"
+        />
+      )}
       <ButtonPrimary onClick={() => submit()} disabled={isLoading || !isValid}>
         Zaloguj się
       </ButtonPrimary>

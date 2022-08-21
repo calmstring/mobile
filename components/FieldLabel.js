@@ -1,16 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { tw } from "@lib/";
+import Typography from "./Typography";
 
 export default function FieldLabel({ text, style }) {
   return (
-    <Text
-      style={[
-        tw`text-base font-bold ml-2 text-text-dark dark:text-text-light`,
-        style,
-      ]}
-    >
+    <Typography style={tw.style("text-base font-bold ml-2", style)}>
       {text}
-    </Text>
+    </Typography>
   );
 }

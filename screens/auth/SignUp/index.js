@@ -9,27 +9,15 @@ const Stack = createNativeStackNavigator();
 
 export default function RegisterScreen() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="InviterScreen"
-        options={{ headerShown: false }}
-        component={InviterScreen}
-      />
-      <Stack.Screen
-        name="ChooseAuthMethod"
-        options={{ headerShown: false }}
-        component={AuthMethodScreen}
-      />
-      <Stack.Screen
-        name="VerifyEmail"
-        options={{ headerShown: false }}
-        component={VerifyEmailScreen}
-      />
-      <Stack.Screen
-        name="CreatePassword"
-        options={{ headerShown: false }}
-        component={CreatePasswordScreen}
-      />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="InviterScreen" component={InviterScreen} />
+      <Stack.Screen name="ChooseAuthMethod" component={AuthMethodScreen} />
+      <Stack.Screen name="VerifyEmail" component={VerifyEmailScreen} />
+      <Stack.Screen name="CreatePassword" component={CreatePasswordScreen} />
     </Stack.Navigator>
   );
 }

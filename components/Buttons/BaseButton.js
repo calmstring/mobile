@@ -7,7 +7,7 @@ function Button({ children, onClick, styles, disabled, renderText = true }) {
   return (
     <TouchableOpacity
       disabled={disabled}
-      activeOpacity={0.8}
+      activeOpacity={0.7}
       onPress={onClick}
       style={[
         tw.style(`p-3 m-2 rounded-lg flex`, disabled && "opacity-50"),

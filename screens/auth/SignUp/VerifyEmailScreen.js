@@ -1,10 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import {
   TextField,
   FieldMessage,
   FieldLabel,
   ButtonPrimary,
+  Typography,
 } from "@components/";
 import FormBase from "./FormBase";
 import { useEmailVerify } from "@hooks/auth";
@@ -33,13 +34,13 @@ function VerifyEmail({ navigation }) {
   return (
     <>
       <View style={tw`items-center`}>
-        <Text
+        <Typography
           style={tw`text-base text-left text-text-dark dark:text-text-light`}
         >
           Wysłaliśmy ci email z kodem weryfikacyjnym na{" "}
-          <Text style={tw`font-semibold`}>{email}</Text>
+          <Typography style={tw`font-semibold`}>{email}</Typography>
           {"\n"}Wpisz go poniżej, by potwierdzić swój email.
-        </Text>
+        </Typography>
       </View>
       <FieldLabel text="Kod weryfikacyjny" style={tw`mt-5`} />
       <TextField

@@ -1,15 +1,13 @@
-import { View, Text, Button } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
 import { useLogout } from "@hooks/auth";
+import { ButtonSecondary } from "@components/";
 
 export default function SettingsScreen() {
   const logout = useLogout();
   return (
-    <View>
-      <View>
-        <Button onPress={() => logout()} title="Logout" />
-        <Text>Settings</Text>
-      </View>
-    </View>
+    <ScrollView>
+      <ButtonSecondary onClick={() => logout()}>Wyloguj</ButtonSecondary>
+    </ScrollView>
   );
 }

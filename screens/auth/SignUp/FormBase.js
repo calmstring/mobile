@@ -1,6 +1,6 @@
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import { View, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
-import { Logo } from "@components/";
+import { Logo, Typography } from "@components/";
 import { tw } from "@lib/";
 
 export default function FormBase({ text, children }) {
@@ -9,11 +9,9 @@ export default function FormBase({ text, children }) {
       <ScrollView>
         <View style={tw`flex  items-center py-3 pt-7`}>
           <Logo bare />
-          <Text
-            style={tw`text-2xl font-semibold text-center text-text-dark dark:text-text-light`}
-          >
+          <Typography style={tw`text-2xl font-semibold text-center`}>
             {text || "Zarejestruj się do Calmstring"}
-          </Text>
+          </Typography>
         </View>
         <View style={tw`mt-8`}>{children}</View>
       </ScrollView>

@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import { TextField, ButtonPrimary } from "@components/";
 import React from "react";
 import { tw } from "@lib/";
