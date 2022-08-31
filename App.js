@@ -1,7 +1,7 @@
 import { useColorScheme, StatusBar, Platform } from "react-native";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen, Auth } from "./screens";
+import { HomeScreen, Auth, RoomScreen } from "./screens";
 import { CompleteSignUp } from "./screens/auth";
 import { useDeviceContext } from "twrnc";
 import { tw } from "@lib/";
@@ -65,6 +65,7 @@ function AppNavigation() {
             options={{ title: "Dokończ konfigurację konta" }}
             component={CompleteSignUp}
           />
+          <Stack.Screen name="Room" component={RoomScreen} />
         </>
       ) : (
         <Stack.Screen

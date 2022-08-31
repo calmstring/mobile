@@ -4,6 +4,7 @@ import authReducer from "./slices/auth/authSlice";
 
 import { authApi } from "./services/authApi";
 import { userApi } from "@services/userApi";
+import { roomApi } from "@services/roomApi";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,12 @@ export const store = configureStore({
     auth: authReducer,
     [authApi.reducerPath]: authApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
+    [roomApi.reducerPath]: roomApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([authApi.middleware, userApi.middleware]),
+    getDefaultMiddleware().concat([
+      authApi.middleware,
+      userApi.middleware,
+      roomApi.middleware,
+    ]),
 });

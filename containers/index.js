@@ -1,3 +1,3 @@
 import ButtonGoogleSignIn from "./ButtonGoogleSignIn";
-
-export { ButtonGoogleSignIn };
+import RoomAvailabilityChip from "./RoomAvailabilityChip";
+export { ButtonGoogleSignIn, RoomAvailabilityChip };
