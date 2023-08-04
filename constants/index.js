@@ -1,0 +1,3 @@
+import REGISTRATION from "./REGISTRATION";
+
+export { REGISTRATION };
